@@ -4,16 +4,16 @@ import bodyParser from "body-parser";
 const app = express();
 const port = 3000;
 
+app.set("view engine", "ejs");
+app.set("views", "./views");
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 let items = [
   { id: 1, title: "Buy milk" },
   { id: 2, title: "Finish homework" },
-];
-
-app.set("view engine", "ejs");
-app.set("views", "./views");
+]; 
 
 app.get("/", (req, res) => {
   res.render("index.ejs", {
