@@ -12,6 +12,9 @@ let items = [
   { id: 2, title: "Finish homework" },
 ];
 
+app.set("view engine", "ejs");
+app.set("views", "./views");
+
 app.get("/", (req, res) => {
   res.render("index.ejs", {
     listTitle: "Today",
